@@ -1,5 +1,5 @@
 let homeScore = 0
-let guestScore = 0
+let awayScore = 0
 let uniSeconds = 0
 let decaSeconds = 0
 let minutes = 0
@@ -9,8 +9,8 @@ function add(team, amount) {
         homeScore += amount
         document.getElementById("home-score").textContent = homeScore
     } else {
-        guestScore += amount
-        document.getElementById("guest-score").textContent = guestScore
+        awayScore += amount
+        document.getElementById("away-score").textContent = awayScore
     }
     statRecognition()
 }
@@ -34,31 +34,31 @@ function timer() {
 }
 
 function statRecognition() {
-    if (homeScore > guestScore) {
+    if (homeScore > awayScore) {
         document.getElementById("home-title").style.color = "#FCD34D"
-        document.getElementById("guest-title").style.color = "#ffffff"
-    } else if (guestScore > homeScore) {
-        document.getElementById("guest-title").style.color = "#FCD34D"
+        document.getElementById("away-title").style.color = "#ffffff"
+    } else if (awayScore > homeScore) {
+        document.getElementById("away-title").style.color = "#FCD34D"
         document.getElementById("home-title").style.color = "#ffffff"
     } else {
         document.getElementById("home-title").style.color = "#C4B5FD"
-        document.getElementById("guest-title").style.color = "#C4B5FD"
+        document.getElementById("away-title").style.color = "#C4B5FD"
     }
 }
 
 function newGame() {
     homeScore = 0
-    guestScore = 0
+    awayScore = 0
     uniSeconds = 0
     decaSeconds = 0
     minutes = 0
     document.getElementById("home-score").textContent = homeScore
-    document.getElementById("guest-score").textContent = guestScore
+    document.getElementById("away-score").textContent = awayScore
     document.getElementById("uni-seconds").textContent = uniSeconds
     document.getElementById("deca-seconds").textContent = decaSeconds
     document.getElementById("minutes").textContent = minutes
     document.getElementById("home-title").style.color = "#ffffff"
-    document.getElementById("guest-title").style.color = "#ffffff"
+    document.getElementById("away-title").style.color = "#ffffff"
 }
 
 setInterval(timer, 1000)
